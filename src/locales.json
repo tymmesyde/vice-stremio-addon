@@ -1,0 +1,106 @@
+[
+    {
+        "name": "Asia EN",
+        "value": "en_asia"
+    },
+    {
+        "name": "Latin America ES",
+        "value": "es_latam"
+    },
+    {
+        "name": "United Kingdom",
+        "value": "en_uk"
+    }, 
+    {
+        "name": "United States",
+        "value": "en_us"
+    },
+    {
+        "name": "Arabic",
+        "value": "ar"
+    },
+    {
+        "name": "Austalia",
+        "value": "en_au"
+    },
+    {
+        "name": "Austria",
+        "value": "de_at"
+    },
+    {
+        "name": "Belgium",
+        "value": "be"
+    },
+    {
+        "name": "Belgium FR",
+        "value": "fr_be"
+    },
+    {
+        "name": "Brasil",
+        "value": "pt_br"
+    },
+    {
+        "name": "Canada EN",
+        "value": "en_ca"
+    },
+    {
+        "name": "France",
+        "value": "fr"
+    },
+    {
+        "name": "Germany",
+        "value": "de"
+    },
+    {
+        "name": "Greece",
+        "value": "gr"
+    },
+    {
+        "name": "India EN",
+        "value": "en_in"
+    },
+    {
+        "name": "Indonesia",
+        "value": "id_id"
+    },
+    {
+        "name": "Italy",
+        "value": "it"
+    },
+    {
+        "name": "Japan",
+        "value": "jp"
+    },
+    {
+        "name": "Korean",
+        "value": "kr"
+    },
+    {
+        "name": "Netherlands",
+        "value": "nl"
+    },
+    {
+        "name": "Portugal",
+        "value": "pt"
+    },
+    {
+        "name": "Québec",
+        "value": "fr_ca"
+    },
+    {
+        "name": "Romania",
+        "value": "ro"
+    },
+    {
+        "name": "Serbia",
+        "value": "rs"
+    },
+    {
+        "name": "Spain",
+        "value": "es"
+    },
+    {
+        "name": "Switzerland",
+        "value": "de_ch"
+    }
+]
