@@ -4,6 +4,7 @@ const request = require('request');
 const requestGraphQL = require('graphql-request').request;
 const querystring = require('querystring');
 const { sha512 } = require('./utils');
+const GraphQLQueries = require('./graphql');
 
 class Vice {
     constructor(locale = 'en_us') {
@@ -48,46 +49,14 @@ class Vice {
         return this._get(id, 'videos');
     }
 
-    async getLatesVideos(limit, skip = 0) {
+    getLatesVideos(limit, skip = 0) {
         const variables = {
             locale: this.locale,
             page: (skip / limit) + 1,
             per_page: limit
         };
-
-        const query = `
-            query VideoHomePage($locale: String!, $page: Int!, $per_page: Int!) {
-                videos(locale: $locale, page: $page, per_page: $per_page) {
-                    id
-                    vms_id
-                    title
-                    summary
-                    thumbnail_url
-                    publish_date
-                    episode {
-                        episode_number
-                        season {
-                            season_number
-                        }
-                    }
-                    channel {
-                        badge_url
-                    }
-                    contributions{
-                        role,
-                        contributor {
-                            full_name
-                            urls
-                        }
-                    }
-                    topics {
-                        name
-                    }
-                }
-            }
-        `;
         
-        return this._requestGraphQL(`${API_ENDPOINT}/graphql`, query, variables);
+        return this._requestGraphQL(`${API_ENDPOINT}/graphql`, GraphQLQueries.Videos, variables);
     }
 
     getFeaturedShows(limit, skip = 0) {
@@ -97,33 +66,8 @@ class Vice {
             per_page: limit,
             topic_id: '57a204be8cb727dec79528cb' // Featured
         };
-
-        const query = `
-            query VideoHomePage($locale: String!, $page: Float!, $per_page: Float!, $topic_id: ID!) {
-                shows(locale: $locale, page: $page, per_page: $per_page, topic_id: $topic_id) {
-                    id
-                    title
-                    dek
-                    url
-                    lede {
-                        thumbnail_url
-                    }
-                    channel {
-                        thumbnail_url
-                        light_logo_url
-                        social_lede {
-                            thumbnail_url
-                        }
-                    }
-                    logo {
-                        thumbnail_url
-                    }
-                    thumbnail_url
-                }
-            }
-        `;
         
-        return this._requestGraphQL(`${API_ENDPOINT}/graphql`, query, variables);
+        return this._requestGraphQL(`${API_ENDPOINT}/graphql`, GraphQLQueries.Shows, variables);
     }
 
     getVideos(show_id) {
