@@ -1,8 +1,12 @@
 #!/usr/bin/env node
-
+require('dotenv').config();
+const { PORT, CACHE_INTERVAL } = process.env;
 const { serveHTTP, publishToCentral } = require("stremio-addon-sdk")
 const addonInterface = require("./addon")
-serveHTTP(addonInterface, { port: 64786 })
+const Caching = require("./cache")
+
+Caching().then(() => setInterval(() => Caching(), CACHE_INTERVAL))
+serveHTTP(addonInterface, { port: PORT })
 
 // when you've deployed your addon, un-comment this line
 // publishToCentral("https://my-addon.awesome/manifest.json")

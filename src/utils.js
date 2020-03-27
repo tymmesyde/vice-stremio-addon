@@ -1,4 +1,3 @@
-require('dotenv').config();
 const { PREFIX_ID, EXTERNAL_PLAYER } = process.env;
 const crypto = require('crypto');
 const request = require('request');

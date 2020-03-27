@@ -1,4 +1,3 @@
-require('dotenv').config();
 const { API_ENDPOINT, PLAYER_ENDPOINT } = process.env;
 const request = require('request');
 const requestGraphQL = require('graphql-request').request;

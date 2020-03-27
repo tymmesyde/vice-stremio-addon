@@ -1,4 +1,3 @@
-require('dotenv').config();
 const { addonBuilder } = require('stremio-addon-sdk');
 const manifest = require('./manifest');
 const Vice = require('./vice');
@@ -31,11 +30,17 @@ builder.defineCatalogHandler(async ({ type, id, extra }) => {
 		const parser = new Parser(locale);
 
 		if (id === 'featured' && type === 'channel') {
-			let { shows } = await vice.getFeaturedShows(35, skip);
-			metas = shows.map(s => parser.showToMeta(s));
+			if (!skip) metas = global.SHOWS[locale];
+			else {
+				let { shows } = await vice.getFeaturedShows(35, skip);
+				metas = shows.map(s => parser.showToMeta(s));
+			}
 		} else if (id === 'latest' && type === 'videos') {
-			let { videos } = await vice.getLatesVideos(25, skip);
-			metas = await Promise.all(videos.map(async v => await parser.videoToMeta(v)));
+			if (!skip) metas = global.VIDEOS[locale];
+			else {
+				let { videos } = await vice.getLatesVideos(25, skip);
+				metas = await Promise.all(videos.map(async v => await parser.videoToMeta(v)));
+			}
 		}
 	}
 
