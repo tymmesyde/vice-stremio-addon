@@ -1,6 +1,6 @@
 {
 	"name": "stremio-addon-vice",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "Watch latest Vice videos.",
 	"main": "src/server.js",
 	"scripts": {
