@@ -159,7 +159,7 @@ class Parser {
             thumbnail: thumbnail_url || '',
             available: true,
             behaviorHints: {
-                defaultVideo: id
+                defaultVideoId: id
             }
         };
 
