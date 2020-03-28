@@ -41,15 +41,16 @@ parseContributions = (contribs = []) => {
     };
 }
 
-parseTopics = (topics = []) => {
+parseTopics = (topics = []) => { 
     const genres = topics.filter(({ name }) => name.match(RegExp(/[A-Z]/g))).map(({ name }) => name);
     return {
+        genre: genres,
         genres,
-        links: genres.map(({ name }) => {
+        links: genres.map(g => {
             return {
-                name,
+                name: g,
                 category: 'genre',
-                url: `stremio:///search?search=${name}`
+                url: `stremio:///search?search=${g}`
             };
         })
     };
@@ -163,10 +164,17 @@ class Parser {
             }
         };
 
+        const contribs = parseContributions(contributions);
+        const tops = parseTopics(topics);
+ 
         return {
             ...meta,
-            ...parseContributions(contributions),
-            ...parseTopics(topics)
+            ...contribs,
+            ...tops,
+            links: [
+                ...contribs.links,
+                ...tops.links
+            ]
         };
     }
 
