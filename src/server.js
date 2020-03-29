@@ -1,9 +1,8 @@
 #!/usr/bin/env node
-require('dotenv').config();
-const { PORT, CACHE_INTERVAL } = process.env;
-const { serveHTTP, publishToCentral } = require("stremio-addon-sdk")
-const addonInterface = require("./addon")
-const Caching = require("./cache")
+const { PORT, CACHE_INTERVAL } = require('../config');
+const { serveHTTP, publishToCentral } = require('stremio-addon-sdk')
+const addonInterface = require('./addon')
+const Caching = require('./cache')
 
 Caching().then(() => setInterval(() => Caching(), CACHE_INTERVAL))
 serveHTTP(addonInterface, { port: PORT })

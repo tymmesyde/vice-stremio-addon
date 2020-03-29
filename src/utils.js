@@ -1,4 +1,4 @@
-const { PREFIX_ID, EXTERNAL_PLAYER } = process.env;
+const { PREFIX_ID, EXTERNAL_PLAYER } = require('../config');
 const crypto = require('crypto');
 const request = require('request');
 const sharp = require('sharp');

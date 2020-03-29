@@ -1,4 +1,4 @@
-const { SHOWS_LIMIT, VIDEOS_LIMIT } = process.env;
+const { SHOWS_LIMIT, VIDEOS_LIMIT } = require('../config');
 const Bluebird = require('bluebird');
 const locales = require('./locales.json');
 const Vice = require('./vice');

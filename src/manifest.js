@@ -1,5 +1,4 @@
-require('dotenv').config();
-const { ADDON_NAME, PREFIX_ID } = process.env;
+const { ADDON_NAME, PREFIX_ID } = require('../config');
 const { description, version } = require('../package.json');
 const locales = require('./locales.json');
 
