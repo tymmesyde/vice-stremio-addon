@@ -5,7 +5,8 @@
 	"main": "src/server.js",
 	"scripts": {
 		"start": "node .",
-		"test": "tape test/*"
+		"test": "tape test/*",
+		"publish": "node publish"
 	},
 	"dependencies": {
 		"bluebird": "^3.7.2",
