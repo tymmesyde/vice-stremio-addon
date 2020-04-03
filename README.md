@@ -1,4 +1,4 @@
-![](https://raw.githubusercontent.com/tymmesyde/vice-stremio-addon/master/public/logo.png)
+<img src="https://raw.githubusercontent.com/tymmesyde/vice-stremio-addon/master/public/background.png" width="600">
 
 # Vice: Stremio Addon
 
