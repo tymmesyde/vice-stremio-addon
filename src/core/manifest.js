@@ -1,6 +1,6 @@
-const { DOMAIN, ADDON_NAME, PREFIX_ID } = require('../config');
-const { description, version } = require('../package.json');
-const locales = require('./locales.json');
+const { DOMAIN, ADDON_NAME, PREFIX_ID } = require('../shared/config');
+const { description, version } = require('../../package.json');
+const locales = require('../shared/locales.json');
 
 module.exports = {
     id: 'community.vice',

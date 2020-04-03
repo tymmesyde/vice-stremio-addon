@@ -2,7 +2,8 @@ const tape = require('tape')
 const client = require('stremio-addon-client')
 const { serveHTTP } = require("stremio-addon-sdk")
 const Caching = require('../src/cache')
-const locales = require('../src/locales.json')
+const locales = require('../src/shared/locales.json')
+const addonInterface = require('../src/core/addon')
 
 const PORT = 4651
 
@@ -12,8 +13,6 @@ let addonServer
 let addonClient
 
 Caching(locale.value).then(() => {
-
-    const addonInterface = require('../src/addon')
 
     tape('it should serve the addon', (t) => {
         serveHTTP(addonInterface, { port: PORT }).then(h => {

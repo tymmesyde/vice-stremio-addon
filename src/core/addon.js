@@ -1,7 +1,7 @@
 const { addonBuilder } = require('stremio-addon-sdk');
 const manifest = require('./manifest');
-const Vice = require('./vice');
-const { getLocale, parseId, Parser } = require('./utils');
+const Vice = require('./lib/vice');
+const { getLocale, parseId, Parser } = require('./lib/utils');
 
 const builder = new addonBuilder(manifest);
 

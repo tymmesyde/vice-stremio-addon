@@ -1,9 +1,9 @@
-const { API_ENDPOINT, PLAYER_ENDPOINT } = require('../config');
+const { API_ENDPOINT, PLAYER_ENDPOINT } = require('../../shared/config');
 const request = require('request');
 const requestGraphQL = require('graphql-request').request;
 const querystring = require('querystring');
 const { sha512 } = require('./utils');
-const GraphQLQueries = require('./graphql');
+const GraphQLQueries = require('../../shared/graphql');
 
 class Vice {
     constructor(locale = 'en_us') {

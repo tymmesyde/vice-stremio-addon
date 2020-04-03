@@ -1,8 +1,8 @@
-const { PREFIX_ID, EXTERNAL_PLAYER } = require('../config');
+const { PREFIX_ID, EXTERNAL_PLAYER } = require('../../shared/config');
 const crypto = require('crypto');
 const request = require('request');
 const sharp = require('sharp');
-const locales = require('./locales.json');
+const locales = require('../../shared/locales.json');
 
 sha512 = (string) => {
     return crypto.createHash('sha512').update(string).digest('hex');

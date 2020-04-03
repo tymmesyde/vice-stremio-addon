@@ -1,8 +1,8 @@
-const { SHOWS_LIMIT, VIDEOS_LIMIT } = require('../config');
+const { SHOWS_LIMIT, VIDEOS_LIMIT } = require('./shared/config');
 const Bluebird = require('bluebird');
-const locales = require('./locales.json');
-const Vice = require('./vice');
-const { Parser } = require('./utils');
+const locales = require('./shared/locales.json');
+const Vice = require('./core/lib/vice');
+const { Parser } = require('./core/lib/utils');
 
 global.SHOWS = {};
 global.VIDEOS = {};
