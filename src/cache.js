@@ -7,8 +7,8 @@ const { Parser } = require('./utils');
 global.SHOWS = {};
 global.VIDEOS = {};
 
-module.exports = () => {
-    return Bluebird.each(locales, async ({ name, value }) => {
+module.exports = locale => {
+    return Bluebird.each(locale ? [locales.find(({ value }) => value === locale)] : locales, async ({ name, value }) => {
         console.log(`Caching ${name} (${value}) ...`);
 
         const vice = new Vice(value);

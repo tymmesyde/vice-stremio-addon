@@ -1,3 +1,5 @@
+![](https://raw.githubusercontent.com/tymmesyde/vice-stremio-addon/master/public/logo.png)
+
 # Vice: Stremio Addon
 
 ## Configuration
@@ -7,6 +9,7 @@ Edit `./config.js`
 ```js
 {
     PORT: 8080,
+    DOMAIN: "http://localhost:8080",
     EXTERNAL_PLAYER: "https://video.vice.com",
     API_ENDPOINT: "https://video.vice.com/api/v1",
     PLAYER_ENDPOINT: "https://vms.vice.com/en_us/video/preplay",

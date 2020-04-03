@@ -5,7 +5,7 @@ const addonInterface = require('./addon')
 const Caching = require('./cache')
 
 Caching().then(() => setInterval(() => Caching(), CACHE_INTERVAL))
-serveHTTP(addonInterface, { port: PORT })
+serveHTTP(addonInterface, { port: PORT, static: '/public' })
 
 // when you've deployed your addon, un-comment this line
 // publishToCentral("https://my-addon.awesome/manifest.json")

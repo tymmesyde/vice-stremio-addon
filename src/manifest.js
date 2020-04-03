@@ -1,4 +1,4 @@
-const { ADDON_NAME, PREFIX_ID } = require('../config');
+const { DOMAIN, ADDON_NAME, PREFIX_ID } = require('../config');
 const { description, version } = require('../package.json');
 const locales = require('./locales.json');
 
@@ -6,6 +6,8 @@ module.exports = {
     id: 'community.vice',
     name: ADDON_NAME,
     description,
+    logo: `${DOMAIN}/public/logo.png`,
+    background: `${DOMAIN}/public/background.png`,
     version,
     idPrefixes: [PREFIX_ID],
     resources: [
