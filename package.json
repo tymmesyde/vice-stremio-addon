@@ -1,6 +1,6 @@
 {
 	"name": "stremio-addon-vice",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"description": "Explore the world of Vice from anywhere on the globe.",
 	"main": "src/server.js",
 	"scripts": {
